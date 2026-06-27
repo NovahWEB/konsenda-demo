@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+  <title>Textura botánica del footer — follaje en silueta sobre verde profundo</title>
+  <!--
+    Patron botanico tileable (600x600) para el fondo del footer de Konsenda.
+    Pensado para ir SOBRE color-night-2 (#1b2a18) a baja opacidad.
+    Las hojas usan un verde apenas mas claro u oscuro que el fondo para crear
+    profundidad sin restar contraste al texto crema o lima (AA preservado).
+    Sin texto encima dentro del SVG: el contraste lo controla el CSS (opacity, blend).
+  -->
+  <defs>
+    <!-- Hoja tipo monstera (con cortes) -->
+    <g id="monstera">
+      <path d="M0 0
+               C 34 -6 60 8 70 36
+               C 78 60 70 92 44 110
+               C 22 124 -8 122 -28 104
+               C -46 88 -52 60 -42 36
+               C -32 12 -18 4 0 0 Z"
+            fill="currentColor"/>
+      <!-- nervaduras / cortes que dan el look monstera (en el color de fondo) -->
+      <g stroke="#13200f" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9">
+        <path d="M2 8 L 30 78"/>
+        <path d="M2 8 L -26 70"/>
+        <path d="M10 30 L 46 52"/>
+        <path d="M-6 34 L -40 50"/>
+        <path d="M14 60 L 40 92"/>
+        <path d="M-8 64 L -30 96"/>
+      </g>
+    </g>
+    <!-- Fronda de helecho -->
+    <g id="fern">
+      <path d="M0 0 C 6 28 6 64 0 120" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <g stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round">
+        <path d="M1 12 C 16 10 24 16 30 28"/>
+        <path d="M0 12 C -14 10 -22 16 -28 28"/>
+        <path d="M2 34 C 16 32 23 38 28 50"/>
+        <path d="M0 34 C -14 32 -21 38 -26 50"/>
+        <path d="M2 58 C 14 56 20 62 25 72"/>
+        <path d="M0 58 C -12 56 -18 62 -23 72"/>
+        <path d="M2 82 C 12 80 17 85 21 94"/>
+        <path d="M0 82 C -10 80 -15 85 -19 94"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- Capa base: silueta de follaje, un punto más oscura que el fondo (profundidad) -->
+  <g color="#16240f">
+    <use href="#monstera" transform="translate(120 140) rotate(-18) scale(1.7)"/>
+    <use href="#monstera" transform="translate(470 90) rotate(28) scale(1.5)"/>
+    <use href="#monstera" transform="translate(540 470) rotate(-40) scale(1.9)"/>
+    <use href="#monstera" transform="translate(80 520) rotate(50) scale(1.4)"/>
+    <!-- repeticiones para que el tile cierre en los bordes -->
+    <use href="#monstera" transform="translate(-30 360) rotate(10) scale(1.6)"/>
+    <use href="#monstera" transform="translate(630 320) rotate(10) scale(1.6)"/>
+    <use href="#monstera" transform="translate(300 -40) rotate(-8) scale(1.5)"/>
+    <use href="#monstera" transform="translate(300 560) rotate(-8) scale(1.5)"/>
+  </g>
+
+  <!-- Capa media: follaje un punto más claro que el fondo (luz tenue) -->
+  <g color="#1f3318">
+    <use href="#monstera" transform="translate(330 300) rotate(8) scale(1.6)"/>
+    <use href="#fern" transform="translate(220 30) rotate(8) scale(1.5)"/>
+    <use href="#fern" transform="translate(420 250) rotate(-22) scale(1.4)"/>
+    <use href="#fern" transform="translate(60 250) rotate(18) scale(1.3)"/>
+    <use href="#fern" transform="translate(500 540) rotate(-14) scale(1.5)"/>
+    <use href="#fern" transform="translate(160 420) rotate(-30) scale(1.4)"/>
+  </g>
+</svg>
